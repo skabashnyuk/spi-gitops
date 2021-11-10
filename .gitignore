@@ -1,0 +1,35 @@
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*/overlays
+*~
+.directory
+
+# Eclipse  #
+###################
+
+*.launch
+.classpath
+.project
+.settings/
+target/
+bin/
+test-output/
+maven-eclipse.xml
+.factorypath
+
+# Theia #
+##################
+.theia/
+
+# Idea #
+##################
+*.iml
+*.ipr
+*.iws
+.idea/
+
+.vscode/
