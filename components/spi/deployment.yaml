@@ -1,19 +1,67 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  annotations:
+    app.quarkus.io/commit-id: 00d9f61d8d07739549d42079dbcb72aa4c3e43fc
+    app.quarkus.io/build-timestamp: 2021-11-02 - 07:09:24 +0000
+  labels:
+    app.kubernetes.io/name: service-provider-integration-api
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+  name: service-provider-integration-api
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: myapp
-  replicas: 2
+      app.kubernetes.io/name: service-provider-integration-api
+      app.kubernetes.io/version: 1.0.0-SNAPSHOT
   template:
     metadata:
+      annotations:
+        app.quarkus.io/commit-id: 00d9f61d8d07739549d42079dbcb72aa4c3e43fc
+        app.quarkus.io/build-timestamp: 2021-11-02 - 07:09:24 +0000
       labels:
-        app: myapp
+        app.kubernetes.io/name: service-provider-integration-api
+        app.kubernetes.io/version: 1.0.0-SNAPSHOT
     spec:
       containers:
-      - name: myapp
-        image: nanajanashia/argocd-app:1.2
-        ports:
-        - containerPort: 8080
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          image: quay.io/skabashn/service-provider-integration-api:1.0.0-SNAPSHOT
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/live
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: service-provider-integration-api
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/ready
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi
+      serviceAccount: vault-auth-sa
+
