@@ -2,7 +2,6 @@ resources:
   - api/deployment.yaml
   - api/service.yaml
   - api/auth-delegator.yaml
-  - vault/
 # - (resources will be applied in all environments, though overlays may modify these via patches)
 
 apiVersion: kustomize.config.k8s.io/v1beta1
