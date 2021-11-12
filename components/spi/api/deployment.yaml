@@ -1,9 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    app.quarkus.io/commit-id: 00d9f61d8d07739549d42079dbcb72aa4c3e43fc
-    app.quarkus.io/build-timestamp: 2021-11-02 - 07:09:24 +0000
   labels:
     app.kubernetes.io/name: service-provider-integration-api
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -16,9 +13,6 @@ spec:
       app.kubernetes.io/version: 1.0.0-SNAPSHOT
   template:
     metadata:
-      annotations:
-        app.quarkus.io/commit-id: 00d9f61d8d07739549d42079dbcb72aa4c3e43fc
-        app.quarkus.io/build-timestamp: 2021-11-02 - 07:09:24 +0000
       labels:
         app.kubernetes.io/name: service-provider-integration-api
         app.kubernetes.io/version: 1.0.0-SNAPSHOT
