@@ -20,7 +20,7 @@ spec:
       component: server
   template:
     metadata:
-    labels:
+      labels:
         helm.sh/chart: vault-0.17.1
         app.kubernetes.io/name: vault
         app.kubernetes.io/instance: vault
