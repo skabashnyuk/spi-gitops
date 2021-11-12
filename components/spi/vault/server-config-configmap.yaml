@@ -7,7 +7,7 @@ metadata:
     helm.sh/chart: vault-0.17.1
     app.kubernetes.io/name: vault
     app.kubernetes.io/instance: vault
-    data:
+data:
   extraconfig-from-values.hcl: |-
     disable_mlock = true
     ui = true
