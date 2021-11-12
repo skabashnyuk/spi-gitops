@@ -1,7 +1,4 @@
-resources:
-- api/
-- vault/
-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
+generators:
+- chartinflator-vault.yaml
