@@ -28,16 +28,21 @@ spec:
     namespace: spi
     server: 'https://kubernetes.default.svc'
   source:
-    path: components
+    path: components/spi
     repoURL: 'https://github.com/skabashnyuk/spi-gitops.git'
     targetRevision: HEAD
-    directory:
-      recurse: true
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+
+    retry:
+      limit: 50 # number of failed sync attempt retries; unlimited number of attempts if less than 0
+      backoff:
+        duration: 15s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
 EOF
 
 
