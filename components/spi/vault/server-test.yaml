@@ -5,7 +5,6 @@ metadata:
   annotations:
     "helm.sh/hook": test
 spec:
-
   containers:
     - name: vault-server-test
       image: hashicorp/vault:1.8.4

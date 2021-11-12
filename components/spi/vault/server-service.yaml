@@ -8,8 +8,6 @@ metadata:
     helm.sh/chart: vault-0.17.1
     app.kubernetes.io/name: vault
     app.kubernetes.io/instance: vault
-      annotations:
-
 spec:
   # We want the servers to become available even if they're not ready
   # since this DNS is also used for join operations.
