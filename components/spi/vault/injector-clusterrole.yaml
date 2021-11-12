@@ -6,8 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: vault-agent-injector
     app.kubernetes.io/instance: vault
-    app.kubernetes.io/managed-by: Helm
-rules:
+    rules:
 - apiGroups: ["admissionregistration.k8s.io"]
   resources: ["mutatingwebhookconfigurations"]
   verbs:

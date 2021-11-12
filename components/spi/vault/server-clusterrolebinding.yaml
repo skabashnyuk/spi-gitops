@@ -6,8 +6,7 @@ metadata:
     helm.sh/chart: vault-0.17.1
     app.kubernetes.io/name: vault
     app.kubernetes.io/instance: vault
-    app.kubernetes.io/managed-by: Helm
-roleRef:
+    roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: system:auth-delegator

@@ -6,8 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: vault-agent-injector
     app.kubernetes.io/instance: vault
-    app.kubernetes.io/managed-by: Helm
-webhooks:
+    webhooks:
   - name: vault.hashicorp.com
     sideEffects: None
     admissionReviewVersions:
