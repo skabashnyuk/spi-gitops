@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: vault-agent-injector
     app.kubernetes.io/instance: vault
-    roleRef:
+roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: vault-agent-injector-clusterrole
