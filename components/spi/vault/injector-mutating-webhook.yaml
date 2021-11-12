@@ -15,7 +15,7 @@ webhooks:
     clientConfig:
       service:
         name: vault-agent-injector-svc
-               path: "/mutate"
+        path: "/mutate"
       caBundle: ""
     rules:
       - operations: ["CREATE", "UPDATE"]
