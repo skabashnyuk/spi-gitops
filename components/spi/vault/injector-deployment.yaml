@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vault-agent-injector
-   labels:
+  labels:
     app.kubernetes.io/name: vault-agent-injector
     app.kubernetes.io/instance: vault
         component: webhook
@@ -17,7 +17,7 @@ spec:
       component: webhook
   template:
     metadata:
-      labels:
+    labels:
         app.kubernetes.io/name: vault-agent-injector
         app.kubernetes.io/instance: vault
         component: webhook
