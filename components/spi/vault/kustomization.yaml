@@ -1,8 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-helmCharts:
-- name: vault
-  repo: https://helm.releases.hashicorp.com
-  version: 0.17.1
-  releaseName: vault
-  namespace: vault
+resources:
+  - server-test.yaml
+  - injector-serviceaccount.yaml
+  - server-serviceaccount.yaml
+  - server-config-configmap.yaml
+  - injector-clusterrole.yaml
+  - injector-clusterrolebinding.yaml
+  - server-clusterrolebinding.yaml
+  - injector-service.yaml
+  - server-headless-service.yaml
+  - server-service.yaml
+  - injector-deployment.yaml
+  - server-statefulset.yaml
+  - injector-mutating-webhook.yaml
