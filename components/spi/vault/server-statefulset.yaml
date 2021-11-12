@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: vault
-   labels:
+  labels:
     app.kubernetes.io/name: vault
     app.kubernetes.io/instance: vault
     spec:
@@ -20,7 +20,7 @@ metadata:
       component: server
   template:
     metadata:
-      labels:
+    labels:
         helm.sh/chart: vault-0.17.1
         app.kubernetes.io/name: vault
         app.kubernetes.io/instance: vault
