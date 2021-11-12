@@ -11,9 +11,10 @@ metadata:
 spec:
   ports:
     - name: http
+      nodePort: 31441
       port: 80
       targetPort: 8080
   selector:
     app.kubernetes.io/name: service-provider-integration-api
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
-  type: ClusterIP
+  type: NodePort
