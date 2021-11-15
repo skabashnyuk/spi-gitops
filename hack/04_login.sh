@@ -1,4 +1,4 @@
-#!/bin/bash
+  #!/bin/bash
 #
 # Copyright (C) 2021 Red Hat, Inc.
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +13,13 @@
 #
 
 set -e
-echo "Testing SPI on minikube"
-#kubectl expose deployment/service-provider-integration-api --type="NodePort" --port 8080 --name=service-provider-integration-api -n spi
-SPI_URL=$(minikube service  service-provider-integration-api  --url -n spi)
-echo $SPI_URL
-#curl -v $SPI_URL/api/v1/token/vvtoken
-curl -v -d '{"token":"value1", "name":"vvtoken"}' -H "Content-Type: application/json" -X POST $SPI_URL/api/v1/token
-curl -v  $SPI_URL/api/v1/token/vvtoken1
-curl -v  $SPI_URL/api/v1/token/vvtoken
+echo "Logging in vault"
+while [ "$(kubectl get pods -l app.kubernetes.io/name=vault -n spi -o jsonpath='{.items[*].status.phase}')" != "Running" ]; do
+   sleep 5
+   echo "Waiting for vault to be ready."
+done
+
+kubectl exec -ti vault-0 -n spi -- sh -c 'vault login $(grep -h '"'"'Initial Root Token'"'"' /tmp/keys.txt | awk '"'"'{print $NF}'"'"')'
+kubectl exec -ti vault-0 -n spi -- sh -c 'vault audit enable file file_path=/vault/logs/$(date '"'"'+%Y%m%d%H%M.%S'"'"').log.json'
+kubectl exec -ti vault-0 -n spi -- vault status
+echo "login complete"
