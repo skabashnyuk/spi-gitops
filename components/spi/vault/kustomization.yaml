@@ -2,15 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - server-test.yaml
-  - injector-serviceaccount.yaml
   - server-serviceaccount.yaml
   - server-config-configmap.yaml
-  - injector-clusterrole.yaml
-  - injector-clusterrolebinding.yaml
   - server-clusterrolebinding.yaml
-  - injector-service.yaml
   - server-headless-service.yaml
   - server-service.yaml
-  - injector-deployment.yaml
   - server-statefulset.yaml
-  - injector-mutating-webhook.yaml
+#   - injector-clusterrole.yaml
+#   - injector-clusterrolebinding.yaml
+#   - injector-service.yaml
+#   - injector-deployment.yaml
+#   - injector-serviceaccount.yaml
+#   - injector-mutating-webhook.yaml
