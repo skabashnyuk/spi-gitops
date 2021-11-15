@@ -22,4 +22,5 @@ done
 kubectl exec -ti vault-0 -n spi -- sh -c 'vault login $(grep -h '"'"'Initial Root Token'"'"' /tmp/keys.txt | awk '"'"'{print $NF}'"'"')'
 kubectl exec -ti vault-0 -n spi -- sh -c 'vault audit enable file file_path=/vault/logs/$(date '"'"'+%Y%m%d%H%M.%S'"'"').log.json'
 kubectl exec -ti vault-0 -n spi -- vault status
+kubectl exec -ti vault-0 -n spi -- vault secrets enable -path=spi kv-v2
 echo "login complete"
