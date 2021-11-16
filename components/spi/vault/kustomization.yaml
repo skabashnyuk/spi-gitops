@@ -1,16 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - server-test.yaml
-  - server-serviceaccount.yaml
-  - server-config-configmap.yaml
-  - server-clusterrolebinding.yaml
-  - server-headless-service.yaml
-  - server-service.yaml
-  - server-statefulset.yaml
-#   - injector-clusterrole.yaml
-#   - injector-clusterrolebinding.yaml
-#   - injector-service.yaml
-#   - injector-deployment.yaml
-#   - injector-serviceaccount.yaml
-#   - injector-mutating-webhook.yaml
+  - vault-cr.yaml
+  - vault-crd.yaml
+  - vault-operator-init.yaml
+  - vault-rbac.yaml
