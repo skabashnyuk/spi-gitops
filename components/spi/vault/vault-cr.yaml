@@ -135,7 +135,12 @@ spec:
             bound_service_account_namespaces: ["spi"]
             policies: ["vault-spi-policy"]
             ttl: 24h
-
+    audit:
+      - type: file
+        description: "File based audit logging device"
+        options:
+          file_path: /vault/logs/vault.log
+          mode: "0640"
     secrets:
       - path: spi
         type: kv
