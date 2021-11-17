@@ -1,11 +1,8 @@
-# Source: vault/templates/server-clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: vault-server-binding
-  labels:
-    app.kubernetes.io/name: vault
-    app.kubernetes.io/instance: vault
+  name: role-tokenreview-binding
+  namespace: spi
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
