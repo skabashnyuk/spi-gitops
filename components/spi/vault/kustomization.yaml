@@ -5,3 +5,4 @@ resources:
   - vault-crd.yaml
   - vault-operator-init.yaml
   - vault-rbac.yaml
+  - server-clusterrolebinding.yaml
