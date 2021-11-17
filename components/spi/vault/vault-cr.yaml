@@ -128,6 +128,8 @@ spec:
           }
     auth:
       - type: kubernetes
+        config:
+          kubernetes_host: https://10.96.0.1:443
         roles:
           # Allow every pod in the default namespace to use the secret kv store
           - name: vault-spi-role
