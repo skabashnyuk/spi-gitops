@@ -128,10 +128,10 @@ spec:
           }
     auth:
       - type: kubernetes
-        config:
-          kubernetes_host: https://kubernetes.default.svc
-          issuer: https://kubernetes.default.svc.cluster.local
-          token_reviewer_jwt: eyJhbGciOiJSUzI1NiIsImtpZCI6IkhIY2VhMFNoVXZCbHYyQ1EzWXR0aldMYXFWOHdXaVpNamNqWkNaT0p0OXMifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjY4NjkyNDQwLCJpYXQiOjE2MzcxNTY0NDAsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJzcGkiLCJwb2QiOnsibmFtZSI6InZhdWx0LTAiLCJ1aWQiOiI5YzgyZmYwYi04MWRlLTRjNmItODBlNC1kMWYxYjIxMjA1M2MifSwic2VydmljZWFjY291bnQiOnsibmFtZSI6InZhdWx0IiwidWlkIjoiNWIyZWIzNGEtZjdhZC00YTA0LWJjZDQtYjA1ZGM4NmM0M2M4In0sIndhcm5hZnRlciI6MTYzNzE2MDA0N30sIm5iZiI6MTYzNzE1NjQ0MCwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnNwaTp2YXVsdCJ9.Oz1mbmsOT6-xUlhvyg32E-fS-wi0IZR7IkAK-9JygTVElbtJfEaEDigZu1LHjuwfy9VHu2Chj8kAOPrfTRk0jxDcVHLoPeUSFuoImJe7ZVpRmr4PNuS2okO2vz3CYEzOAII_Z8KBav45d8y3vXWT5Ae65E_Orhi69ov4ABiHFzyjF_KR7mtGS-bg5ZSwEvKq_jFISDtjV93bZ2IeMMTBMlsZUMy0goqdRqrG3d44buyBQaHJRl594tq3LvyfznloWX9Z33xHeKoHfWY1HD9VvS81fuzhNslDg50AdvWA7oX2xBhKk63qd9jsvr5emUJcRRdp0xBFD-4Xj9cFht1Pig
+#         config:
+#           kubernetes_host: https://kubernetes.default.svc
+#           issuer: https://kubernetes.default.svc.cluster.local
+#           token_reviewer_jwt: eyJhbGciOiJSUzI1NiIsImtpZCI6IkhIY2VhMFNoVXZCbHYyQ1EzWXR0aldMYXFWOHdXaVpNamNqWkNaT0p0OXMifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjY4NjkyNDQwLCJpYXQiOjE2MzcxNTY0NDAsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJzcGkiLCJwb2QiOnsibmFtZSI6InZhdWx0LTAiLCJ1aWQiOiI5YzgyZmYwYi04MWRlLTRjNmItODBlNC1kMWYxYjIxMjA1M2MifSwic2VydmljZWFjY291bnQiOnsibmFtZSI6InZhdWx0IiwidWlkIjoiNWIyZWIzNGEtZjdhZC00YTA0LWJjZDQtYjA1ZGM4NmM0M2M4In0sIndhcm5hZnRlciI6MTYzNzE2MDA0N30sIm5iZiI6MTYzNzE1NjQ0MCwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnNwaTp2YXVsdCJ9.Oz1mbmsOT6-xUlhvyg32E-fS-wi0IZR7IkAK-9JygTVElbtJfEaEDigZu1LHjuwfy9VHu2Chj8kAOPrfTRk0jxDcVHLoPeUSFuoImJe7ZVpRmr4PNuS2okO2vz3CYEzOAII_Z8KBav45d8y3vXWT5Ae65E_Orhi69ov4ABiHFzyjF_KR7mtGS-bg5ZSwEvKq_jFISDtjV93bZ2IeMMTBMlsZUMy0goqdRqrG3d44buyBQaHJRl594tq3LvyfznloWX9Z33xHeKoHfWY1HD9VvS81fuzhNslDg50AdvWA7oX2xBhKk63qd9jsvr5emUJcRRdp0xBFD-4Xj9cFht1Pig
         roles:
           # Allow every pod in the default namespace to use the secret kv store
           - name: vault-spi-role
