@@ -9,4 +9,4 @@ spec:
   name: spi-service
   source: spi-operator-catalog
   sourceNamespace: spi
-  startingCSV: application-service.v0.0.1
+  startingCSV: service-provider-integration-operator.v0.1.0
