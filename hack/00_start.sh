@@ -20,14 +20,12 @@ minikube start --memory=4000mb
 
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+minikube addons enable olm
 
 kubectl rollout status deployment/argocd-dex-server -n argocd
 kubectl rollout status deployment/argocd-redis -n argocd
 kubectl rollout status deployment/argocd-repo-server -n argocd
 kubectl rollout status deployment/argocd-server -n argocd
-
-
-minikube addons enable olm
 
 kubectl rollout status deployment/olm-operator -n olm
 kubectl rollout status deployment/catalog-operator -n olm
