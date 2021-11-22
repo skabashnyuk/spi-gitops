@@ -14,7 +14,7 @@
 
 set -e
 echo "Testing SPI on minikube"
-#kubectl expose deployment/service-provider-integration-api --type="NodePort" --port 8080 --name=service-provider-integration-api -n spi
+kubectl rollout status deployment/service-provider-integration-api -n spi
 SPI_URL=$(minikube service  service-provider-integration-api  --url -n spi)
 echo $SPI_URL
 #curl -v $SPI_URL/api/v1/token/vvtoken
