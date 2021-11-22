@@ -5,6 +5,6 @@ metadata:
   namespace: spi
 spec:
   sourceType: grpc
-  image: quay.io/skabashn/service-provider-integration-operator-catalog@sha256:ac2d09a0ff1133c352343eb1e09fa6d7a9f0f0f9e18cde03b1ab8ea6d34603cc
+  image: quay.io/skabashn/service-provider-integration-operator-catalog@sha256:631b737091f396ab4dc1af42b6209dde1210ced5f8818dba85fff843725571ff
   displayName: SPI Operator Catalog
   publisher: Red Hat
