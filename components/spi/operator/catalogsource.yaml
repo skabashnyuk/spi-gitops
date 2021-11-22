@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: spi-operator-catalog
+  namespace: spi
+spec:
+  sourceType: grpc
+  image: quay.io/skabashn/service-provider-integration-operator-catalog
+  displayName: SPI Operator Catalog
+  publisher: Red Hat

@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: spi-operator
+  namespace: spi
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: spi-service
+  source: spi-operator-catalog
+  sourceNamespace: spi
+  startingCSV: application-service.v0.0.1
